@@ -27,13 +27,16 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     adicionacontato.cpp \
-    database.cpp
+    database.cpp \
+    removecontato.cpp
 
 HEADERS += \
         mainwindow.h \
     adicionacontato.h \
-    database.h
+    database.h \
+    removecontato.h
 
 FORMS += \
         mainwindow.ui \
-    adicionacontato.ui
+    adicionacontato.ui \
+    removecontato.ui

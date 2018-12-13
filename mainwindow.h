@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "adicionacontato.h"
+#include "removecontato.h"
 #include "database.h"
 
 namespace Ui {
@@ -23,6 +24,7 @@ public slots:
 private:
     Ui::MainWindow *ui;
     AdicionaContato *addInst;
+    RemoveContato *delInst;
     Database *dataInst;
 };
 

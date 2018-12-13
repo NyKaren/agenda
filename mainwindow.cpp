@@ -10,7 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
     dataInst->connect_database();
 
     addInst = new AdicionaContato();
+    delInst = new RemoveContato();
     connect(ui->actionAdicionar, SIGNAL(triggered()), addInst, SLOT(show()));
+    connect(ui->actionRemover, SIGNAL(triggered()), delInst, SLOT(show()));
     connect(ui->buscar_pushButton, SIGNAL(clicked()), dataInst, SLOT(select_person()));
 }
 
@@ -23,3 +25,4 @@ void MainWindow::buscar()
 {
     dataInst->select_person();
 }
+

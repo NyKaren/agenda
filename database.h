@@ -19,6 +19,7 @@ public:
 public slots:
     bool connect_database ();
     bool insert_person (QString nome, QString telefone, QString endereco);
+    bool remove_person (QString nome, QString telefone, QString endereco);
     QVector<QString> select_person ();
 
 };

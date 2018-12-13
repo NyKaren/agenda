@@ -43,6 +43,27 @@ bool Database::insert_person(QString nome, QString telefone, QString endereco)
     }
 }
 
+bool Database::remove_person(QString nome, QString telefone, QString endereco)
+{
+    QSqlQuery query (dbConnection);
+    query.prepare ("INSERT INTO Pessoa (nome, telefone, endereco) VALUES (:nome, :telefone, :endereco)");
+
+    query.bindValue(":nome", nome);
+    query.bindValue(":telefone", telefone);
+    query.bindValue(":endereco", endereco);
+
+    if (query.exec())
+    {
+        return true;
+    }
+
+    else
+    {
+        qDebug() << "Falhou: " << query.lastError();
+        return false;
+    }
+}
+
 QVector<QString> Database::select_person()
 {
     QVector<QString> strResult;
