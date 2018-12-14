@@ -44,10 +44,10 @@ bool Database::insert_person(QString nome, QString telefone, QString endereco)
 }
 
 bool Database::remove_person(QString nome, QString telefone, QString endereco)
-{
+{   //posso/devo colocar só um parâmetro de entrada.
     QSqlQuery query (dbConnection);
     query.prepare ("INSERT INTO Pessoa (nome, telefone, endereco) VALUES (:nome, :telefone, :endereco)");
-
+    //mudar pra remove ... where nome = nome;
     query.bindValue(":nome", nome);
     query.bindValue(":telefone", telefone);
     query.bindValue(":endereco", endereco);
